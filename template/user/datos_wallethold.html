@@ -1,0 +1,205 @@
+{% load humanize %} {% load static %}
+
+<!-- Cabecera -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">WalletHold Usuario</h1>
+    {% if estado_WalletHold == 'Desactivado' or estado_WalletHold == 'Penalizado'%}
+        <span class="text-sm font-weight-bold text-danger text-uppercase mb-1 d-block">
+            Wallet: <code>Registrar</code>
+        </span>
+        <form role="form" action="" method="POST">{% csrf_token %}
+            <input type="text" name="wallet_wallethold" id="wallet_wallethold" class="form-control input-sm" placeholder="" required>
+            <br>
+            <input type="submit" value="Activar Holder" class="btn btn-info btn-block">
+        </form>
+    {% else %}
+        <span class="text-sm font-weight-bold text-success text-uppercase mb-1 d-block">
+            Wallet: <code>{{wallet_user}}</code>
+        </span>
+    {% endif %}
+</div>
+
+<!-- Content Row -->
+<div class="row">
+    <!-- Total de WalletHold-->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total WalletHold</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{total_nodos}}</div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Total de WalletHold ocupados -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total WalletHold ocupados</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{total_nodos_ocupados}}</div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Total de WalletHold disponibles -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total WalletHold disponibles</div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{total_nodos_libres}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Total de Supply WalletHold5 -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Supply WalletHold</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{total_supply_nodos}}</div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Total de CRES-->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total de CRES</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{balance|intcomma}}</div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Total de Ganancias Cres -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Ganancias CRES</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ganancias_CRS|intcomma}}</div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Total de Rentabilidad -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Rentabilidad</div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ porcentaje_ganancias|intcomma }}%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Porcentaje actual por usuario -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Porcentaje actual por usuario</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ porcentaje_actual|intcomma }} %</div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Recompensas recibidas -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Recompensas recibidas</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{numero_pagos_completados|intcomma}}</div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Recompensas penalizadas -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Recompensas penalizadas</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{numero_pagos_penalizado|intcomma}}</div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Recompensas activas -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Recompensas activas</div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ numero_pagos_pendientes|intcomma }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Total de Recompensas -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total de recompensas</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ numero_recompensas|intcomma }}</div>
+                    </div>
+                    <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content Row -->

@@ -1,0 +1,10 @@
+total_nodos = 850
+total_nodos_ocupados = [0]
+total_nodos_penalizados = [0]
+total_nodos_libres = [0]
+total_supply_nodos = 0
+recompensa = 9750000
+recompensa_porcentaje_nodo = 0
+start = 0
+dias_recompensa = ['05', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55', '00']
+token_requeridos = 2000

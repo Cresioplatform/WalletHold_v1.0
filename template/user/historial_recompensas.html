@@ -1,0 +1,61 @@
+{% load humanize %} {% load static %}
+
+<div class="col-lg-8 mb-4">
+    <!-- Tabla -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Historial de recompensas</h6></div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Fecha confirmacion</th>
+                            <th>Recompensa</th>
+                            <th>% por Nodo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Fecha confirmacion</th>
+                            <th>Recompensa</th>
+                            <th>% por Nodo</th>
+                            <th>Estado</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for a in tabla %}
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    {% if a.estado == 'Penalizado' %}
+                                        <div class="mr-3"><a href="#" class="btn btn-warning btn-circle btn-sm"><i class="fas fa-exclamation-triangle"></i></a></div>
+                                    {% elif a.estado == 'Activado' %}
+                                        <div class="mr-3"><a href="#" class="btn btn-info btn-circle btn-sm"><i class="fas fa-exclamation-triangle"></i></a></div>
+                                    {% else %}
+                                        <div class="mr-3"><a href="#" class="btn btn-success btn-circle btn-sm"><i class="fas fa-check"></i></a></div>
+                                    {% endif %}
+
+                                    {% if a.estado == 'Penalizado' %}
+                                    <div><a class="small">Desde: {{ a.fecha_inicio }}</a>
+                                        <div class="small">Penalizado: {{ a.fecha_penalizado }}</div>
+                                    </div>
+                                    {% else %}
+                                    <div><a class="small">Desde: {{ a.fecha_inicio }}</a>
+                                        <div class="small">Hasta: {{ a.fecha_envio }}</div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </td>
+                            <td class="small align-middle">CRES: {{ a.pago|intcomma }}</td>
+                            <td class="small align-middle">{{ a.porcentaje_nodo|intcomma }}%</td>
+                            <td class="small align-middle">{{ a.estado }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
