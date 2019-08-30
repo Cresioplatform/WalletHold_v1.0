@@ -1,6 +1,6 @@
 # Sistema de recompensas WalletHold
-Es un ejemplo del sisetma WalletHold, pudiendolo adaptar a distintas fechas y recompensas.
-El sistema esta desarrollado en Django 2.2.4 y Python 3.6.6 .
+Es un ejemplo del sistema WalletHold, siendo posible adaptarlo a distintas fechas y recompensas.
+El sistema está desarrollado en Django 2.2.4 y Python 3.6.6 .
 
 
 ## Explicación
@@ -10,7 +10,7 @@ A diferencia de la adquisición de TOKEN en las rondas de la ICO, CRESIO ha deci
 
 
 - **Funcionamiento del sistema WalletHold**
-Para que los TOKEN recibidos puedan ser transferidos al wallet, la Cuenta WalletHold debe haber recibido TOKEN gratuitos durante al menos **X días consecutivos**. En el caso no mantenerse un mínimo de **X TOKEN** en el wallet durante los **X días consecutivos** el usuario perderá los TOKEN acumulados en la ronda actual.
+Para que los TOKEN recibidos puedan ser transferidos al wallet, la Cuenta WalletHold debe haber recibido TOKEN gratuitos durante al menos **X días consecutivos**. En el caso de no mantenerse un mínimo de **X TOKEN** en el wallet durante los **X días consecutivos** el usuario perderá los TOKEN acumulados en la ronda actual.
 
 
 #### Gráfico de funcionamiento
@@ -19,10 +19,10 @@ Para que los TOKEN recibidos puedan ser transferidos al wallet, la Cuenta Wallet
 
 #### Tranferencias
 Las transferencias a los wallets de cada Cuenta WalletHold de los TOKEN acumulados se realizarán 2 veces al mes.
-Por tanto, para poder transferir los TOKEN recibidos a un wallet, se deberá haber recibido la recompensa durante al menos 15 días consecutivos, y esperar al próximo periodo de pago. 
+Por tanto, para poder transferir los TOKEN recibidos a un wallet, se deberá haber recibido la recompensa durante al menos 15 días consecutivos y esperar al próximo período de pago. 
 
 Para la entrega de estos CRES se ha asignado el **X% de los TOKEN creados (X millones de TOKEN)** para repartir entre las Cuentas WalletHold durante X años.
-Lo que supone la entrega de **X TOKEN diarios**, que serán repartidos a partes iguales entre las Cuentas WalletHold, lo que supone que cuantas más Cuentas WalletHold haya, menos recibirá cada una de ellas.
+Lo que supone la entrega de **X TOKEN diarios**, que serán repartidos a partes iguales entre las Cuentas WalletHold, lo que supone que cuantas más Cuentas WalletHold existan, menos recibirá cada una de ellas.
 
 
 #### Ejemplo de recompensas
@@ -58,11 +58,11 @@ Navegue hasta [http://127.0.0.1:8000](http://127.0.0.1:8000) para verlo en funci
 	
 #### Crear registro nuevo
 	Registra un usuario nuevo 
-	Loguese con el usuario y contraseña creadas anterior mente.
-	Arriba a la derecha ponga su wallet ERC20
-	Click a registrar y se agregara a la lista de espera
-	En proxima recompensa si hay plazas disponibles se le activara el sistema
-	En la proxima recompensa ya se le mostrara en la tabla la recompensa y su estado
+	Realice Loguin con el usuario y contraseña creadas anteriormente.
+	Arriba a la derecha escriba su wallet ERC20
+	Click a registrar y se agregará a la lista de espera
+	En la próxima recompensa si hay plazas disponibles se le activará el sistema
+	En la próxima recompensa ya se le mostrará en la tabla la recompensa y su estado
 
 # Recursos utilizados de terceros
 · Template gratuito de: https://startbootstrap.com/themes/sb-admin-2/
