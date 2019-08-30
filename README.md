@@ -56,7 +56,7 @@ Navegue hasta [http://127.0.0.1:8000](http://127.0.0.1:8000) para verlo en funci
 #### Modificacion de datos básicos
 	En el archivo /wallethold/views/usuario.py tiene que modificar la linea 29, 30, 73, 75
 	En el archivo /wallethold/views/scan.py tiene que modificar la linea 68 y 70
-	En el archivo Datos.py puede modificar los datos basicos.
+	En el archivo Datos.py puede modificar los datos básicos.
 	
 #### Crear registro nuevo
 	Registra un usuario nuevo 
