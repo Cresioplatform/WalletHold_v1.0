@@ -41,6 +41,7 @@ Estas instrucciones le proporcionarán una copia del proyecto en funcionamiento 
 `pip install -r requirements.txt`
 
 ##### Aplicar migraciones
+`python manage.py makemigrations`
 `python manage.py migrate`
 
 ##### Inicie la aplicación django
