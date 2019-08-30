@@ -42,6 +42,7 @@ Estas instrucciones le proporcionarán una copia del proyecto en funcionamiento 
 
 ##### Aplicar migraciones
 `python manage.py makemigrations`
+
 `python manage.py migrate`
 
 ##### Inicie la aplicación django
