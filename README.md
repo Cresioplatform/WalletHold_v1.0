@@ -6,8 +6,7 @@ El sistema esta desarrollado en Django 2.2.4 y Python 3.6.6 .
 # Explicación
 
 - **¿Qué es WalletHold?**
-A diferencia de la adquisición de TOKEN en las rondas de la ICO, CRESIO ha decidido crear un novedoso sistema para recibir TOKEN sin contraprestación económica: “**WalletHold**”. Se trata de un sistema independiente de código abierto, que se encarga de revisar y detectar de manera continua los wallets que tengan más de **X TOKEN**. Dichos wallets recibirán TOKEN gratuitos
-de forma diaria, hasta que el usuario deje su wallet por debajo de los **X TOKEN**. Aquellos wallets que cumplan estos requisitos se denominarán Cuentas WalletHold y en su panel de control podrán ir observando los CRES recibidos diariamente.
+A diferencia de la adquisición de TOKEN en las rondas de la ICO, CRESIO ha decidido crear un novedoso sistema para recibir TOKEN sin contraprestación económica: “**WalletHold**”. Se trata de un sistema independiente de código abierto, que se encarga de revisar y detectar de manera continua los wallets que tengan más de **X TOKEN**. Dichos wallets recibirán TOKEN gratuitos de forma diaria, hasta que el usuario deje su wallet por debajo de los **X TOKEN**. Aquellos wallets que cumplan estos requisitos se denominarán Cuentas WalletHold y en su panel de control podrán ir observando los CRES recibidos diariamente.
 
 
 - **Funcionamiento del sistema WalletHold**
