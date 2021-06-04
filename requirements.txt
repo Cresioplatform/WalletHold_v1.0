@@ -3,7 +3,7 @@ base58==1.0.3
 certifi==2019.6.16
 chardet==3.0.4
 cytoolz==0.10.0
-Django==2.2.4
+Django==2.2.21
 django-crispy-forms==1.7.2
 django-csp==3.5
 django-feature-policy==3.0.0
