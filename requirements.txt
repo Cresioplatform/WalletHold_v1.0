@@ -29,7 +29,7 @@ protobuf==3.9.1
 pycryptodome==3.8.2
 pypiwin32==223
 pytz==2019.2
-pywin32==224
+pywin32==301
 requests==2.22.0
 rlp==1.1.0
 six==1.12.0
