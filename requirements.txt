@@ -25,7 +25,7 @@ lru-dict==1.1.6
 multiaddr==0.0.8
 netaddr==0.7.19
 parsimonious==0.8.1
-protobuf==3.9.1
+protobuf==3.15.0
 pycryptodome==3.8.2
 pypiwin32==223
 pytz==2019.2
